@@ -48,7 +48,8 @@ const styles = StyleSheet.create({
   placeInput: {
     width: '70%',
     height: 40,
-    padding: 3,
+    paddingLeft: 5,
+    marginBottom: 5,
     borderWidth: 1,
     borderColor: 'orange',
   },
