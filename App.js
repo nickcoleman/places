@@ -12,7 +12,15 @@ export default class App extends Component {
   placeAddedHandler = placeName => {
     this.setState(prevState => {
       return {
-        places: prevState.places.concat(placeName),
+        places: prevState.places.concat({ key: Math.random().toString(), value: placeName }),
+      }
+    })
+  }
+
+  placedDeletedHandler = key => {
+    this.setState(prevState => {
+      return {
+        places: prevState.places.filter(place => place.key !== key)
       }
     })
   }
@@ -21,7 +29,7 @@ export default class App extends Component {
     return (
       <View style={styles.container}>
         <PlaceInput onPlaceAdded={this.placeAddedHandler} />
-        <PlaceList places={this.state.places} />
+        <PlaceList places={this.state.places} onItemDeleted={this.placedDeletedHandler} />
       </View>
     )
   }
@@ -30,7 +38,7 @@ export default class App extends Component {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    padding: 26,
+    padding: 40,
     backgroundColor: '#fff',
     alignItems: 'center',
     justifyContent: 'flex-start',

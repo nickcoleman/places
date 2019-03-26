@@ -18,6 +18,7 @@ class PlaceInput extends Component {
     }
 
     this.props.onPlaceAdded(this.state.placeName)
+    this.setState({ placeName: '' })
   }
 
   render() {
@@ -45,6 +46,10 @@ const styles = StyleSheet.create({
   },
   placeInput: {
     width: '70%',
+    height: 40,
+    padding: 3,
+    borderWidth: 1,
+    borderColor: 'orange',
   },
   placeButton: {
     width: '30%',
