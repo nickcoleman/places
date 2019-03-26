@@ -6,18 +6,19 @@ class PlaceInput extends Component {
     placeName: '',
   }
 
-  placeNameChangedHandler = val => {
+  placeNameChangedHandler = name => {
     this.setState({
-      placeName: val,
+      placeName: name,
     })
   }
 
   placeSubmitHandler = () => {
-    if (this.state.placeName.trim() === '') {
+    const { placeName } = this.state
+    if (placeName.trim() === '') {
       return
     }
 
-    this.props.onPlaceAdded(this.state.placeName)
+    this.props.onPlaceAdded(placeName)
     this.setState({ placeName: '' })
   }
 
