@@ -4,12 +4,18 @@
   "private": true,
   "scripts": {
     "start": "node node_modules/react-native/local-cli/cli.js start",
+    "ios": "react-native run-ios",
+    "ios-7": "react-native run-ios --simulator='iPhone 7'",
+    "ipad": "react-native run-ios --simulator='iPad Air 2'",
+    "android": "react-native run-android",
     "test": "jest",
     "lint": "eslint ."
   },
   "dependencies": {
     "react": "16.8.3",
-    "react-native": "0.59.1"
+    "react-native": "0.59.1",
+    "react-redux": "^6.0.1",
+    "redux": "^4.0.1"
   },
   "devDependencies": {
     "@babel/core": "^7.4.0",
